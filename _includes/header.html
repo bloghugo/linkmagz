@@ -1,0 +1,20 @@
+<header id="header-outer" class="site-header">
+  <div id="header-content" class="container">
+    <div id="header" class="brand">
+      <a class="logo" href="{{ '/' | relative_url }}">
+        <h1 class="blog-title">{{ site.title }}</h1>
+      </a>
+      <p class="title-description">{{ site.description }}</p>
+    </div>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.body.classList.toggle('nav-open')">☰</button>
+
+    <nav id="navmenu-wrap" class="navmenu">
+      <ul class="navmenu-content">
+        {% for item in site.data.navigation %}
+          <li><a href="{{ item.link | relative_url }}">{{ item.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

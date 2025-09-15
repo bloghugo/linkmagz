@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<div class="featured">
+  <h2>Featured Post</h2>
+  {% assign first_post = site.posts.first %}
+  {% if first_post %}
+  <article class="post featured-post">
+    <h3 class="post-title"><a href="{{ first_post.url | relative_url }}">{{ first_post.title }}</a></h3>
+    <div class="post-excerpt">{{ first_post.excerpt }}</div>
+  </article>
+  {% endif %}
+</div>
+
+<div class="posts-list">
+  <h2>Artikel Terbaru</h2>
+  {% for post in paginator.posts offset:1 %}
+    <article class="post">
+      <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <div class="post-excerpt">{{ post.excerpt }}</div>
+    </article>
+  {% endfor %}
+</div>
+
+<!-- Pagination controls -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a class="prev" href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
+  {% endif %}
+  <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a class="next" href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
+  {% endif %}
+</div>

@@ -1,0 +1,17 @@
+title: "Blue Theme Blog"
+email: "you@example.com"
+description: "Migrated from Blogger LinkMagz Template"
+baseurl: "" 
+url: "https://example.com"
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-paginate
+
+# Pagination
+paginate: 5
+paginate_path: "/page:num"
+
+# Disqus
+disqus_shortname: "disqusnamapendek"

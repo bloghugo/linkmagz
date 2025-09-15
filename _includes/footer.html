@@ -1,0 +1,25 @@
+<footer id="footer-outer">
+  <div id="footer-content" class="container">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h4>{{ site.title }}</h4>
+        <p>{{ site.description }}</p>
+      </div>
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <ul>
+          {% for item in site.data.navigation %}
+            <li><a href="{{ item.link | relative_url }}">{{ item.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }} — Template converted from Blogger LinkMagz.</p>
+    </div>
+  </div>
+</footer>

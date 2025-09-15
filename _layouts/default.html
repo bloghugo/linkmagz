@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    {% include header.html %}
+    <div id="wrapper" class="container main-layout">
+      <div id="content-wrap">
+        <main id="main" class="content-area">
+          {{ content }}
+        </main>
+      </div>
+      <div id="sidebar-wrap">
+        {% include sidebar.html %}
+      </div>
+    </div>
+
+    {% include footer.html %}
+    <script src="{{ '/assets/js/template.js' | relative_url }}"></script>
+  </body>
+</html>
