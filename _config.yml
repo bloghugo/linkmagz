@@ -1,17 +1,15 @@
 title: "Blue Theme Blog"
-email: "siapxcom@gmail.com"
+email: "you@example.com"
 description: "Migrated from Blogger LinkMagz Template"
-baseurl: "/linkmagz" 
+baseurl: "/linkmagz"
 url: "https://bloghugo.github.io"
-theme: minima
 
-# Plugins
 plugins:
   - jekyll-paginate
 
-# Pagination
 paginate: 5
 paginate_path: "/page:num"
 
-# Disqus
+permalink: /:title
+
 disqus_shortname: "belajarcorelweb"
