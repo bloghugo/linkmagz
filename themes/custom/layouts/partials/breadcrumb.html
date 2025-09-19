@@ -1,0 +1,7 @@
+<nav class="breadcrumb">
+  <a href="{{ "/" | relURL }}">Home</a>
+  {{ with .CurrentSection }}
+    › <a href="{{ .Permalink }}">{{ .Title }}</a>
+  {{ end }}
+  › <span>{{ .Title }}</span>
+</nav>

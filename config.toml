@@ -1,0 +1,21 @@
+baseURL = "https://example.com/"
+languageCode = "id"
+title = "Blog Hugo SEO"
+theme = "custom"
+paginate = 6
+
+[params]
+  author = "Admin"
+  about = "Saya menulis seputar Hugo, SEO, dan Web Performance."
+  social = ["https://twitter.com/example","https://github.com/example"]
+
+[related]
+  threshold = 80
+  includeNewer = true
+  toLower = false
+[[related.indices]]
+  name = "tags"
+  weight = 100
+[[related.indices]]
+  name = "categories"
+  weight = 80

@@ -1,0 +1,7 @@
+{{ $toc := .TableOfContents }}
+{{ if $toc }}
+  <aside class="toc-box">
+    <h3>Daftar Isi</h3>
+    {{ .TableOfContents }}
+  </aside>
+{{ end }}

@@ -1,0 +1,37 @@
+{{ define "main" }}
+  {{ partial "breadcrumb.html" . }}
+
+  <article class="post-article">
+    <header class="post-header">
+      <h1>{{ .Title }}</h1>
+      <p class="meta">📅 {{ .Date.Format "02 Jan 2006" }} · {{ range .Params.tags }}<a class="tag" href="{{ "tags/" | relURL }}{{ . | urlize }}">#{{ . }}</a>{{ end }}</p>
+    </header>
+
+    {{ partial "toc-holder.html" . }}
+
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+
+    {{< bacajuga >}}
+
+    <div class="tags-area">
+      <strong>Tags:</strong>
+      {{ range .Params.tags }}
+        <a class="tag" href="{{ "tags/" | relURL }}{{ . | urlize }}">#{{ . }}</a>
+      {{ end }}
+    </div>
+
+    {{ partial "authorbox.html" . }}
+
+    <div class="post-nav">
+      <div class="prev">{{ with .PrevInSection }}← <a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}</div>
+      <div class="next">{{ with .NextInSection }}<a href="{{ .RelPermalink }}">{{ .Title }}</a> →{{ end }}</div>
+    </div>
+
+    {{/* comments placeholder */}}
+    <div id="comments">
+      <!-- Add Disqus or Giscus here -->
+    </div>
+  </article>
+{{ end }}

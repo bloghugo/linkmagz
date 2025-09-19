@@ -1,0 +1,7 @@
+{{ $related := .Page.Site.RegularPages.Related .Page | first 1 }}
+{{ if $related }}
+<div class="related-box">
+  📌 <strong>Baca juga:</strong>
+  <a href="{{ (index $related 0).RelPermalink }}">{{ (index $related 0).Title }}</a>
+</div>
+{{ end }}

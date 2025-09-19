@@ -1,0 +1,11 @@
+<footer class="site-footer">
+  <div class="inner">
+    <nav class="foot-nav">
+      <a href="{{ "/" | relURL }}">Home</a> · <a href="{{ "/about/" | relURL }}">About</a> · <a href="{{ "/contact/" | relURL }}">Contact</a>
+    </nav>
+    <div class="social">
+      {{ range .Site.Params.social }}<a href="{{ . }}">{{ . }}</a> {{ end }}
+    </div>
+    <div class="copyright">© {{ now.Format "2006" }} {{ .Site.Title }}</div>
+  </div>
+</footer>

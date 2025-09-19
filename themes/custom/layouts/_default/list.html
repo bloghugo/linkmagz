@@ -1,0 +1,31 @@
+{{ define "main" }}
+  {{ if .IsHome }}
+    {{/* Featured section only on home */}}
+    {{ with first 1 (where .Site.RegularPages "Params.featured" true) }}
+      {{ range . }}
+      <section class="featured-card">
+        <a href="{{ .RelPermalink }}"><h2>{{ .Title }}</h2></a>
+        <p class="excerpt">{{ .Summary }}</p>
+        <div class="meta">📅 {{ .Date.Format "02 Jan 2006" }} · {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}</div>
+      </section>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  <section class="post-list">
+    {{ range .Paginator.Pages }}
+      <article class="post-card">
+        <a class="thumb" href="{{ .RelPermalink }}" aria-hidden="true"></a>
+        <div class="post-body">
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p class="excerpt">{{ .Summary }}</p>
+          <div class="meta">📅 {{ .Date.Format "02 Jan 2006" }} · {{ range .Params.tags }}<a class="tag" href="{{ "tags/" | relURL }}{{ . | urlize }}">#{{ . }}</a> {{ end }}</div>
+        </div>
+      </article>
+    {{ end }}
+  </section>
+
+  <nav class="pagination">
+    {{ template "_internal/pagination.html" . }}
+  </nav>
+{{ end }}

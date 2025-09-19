@@ -1,0 +1,34 @@
+<aside class="site-sidebar">
+  <div class="box popular">
+    <h3>Most Popular</h3>
+    <ul>
+      {{ range first 5 .Site.RegularPages.ByWeight }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+
+  <div class="box about-me">
+    <h3>About Me</h3>
+    <img src="{{ "static/images/profile.jpg" | relURL }}" alt="Profile" class="avatar">
+    <p>{{ .Site.Params.about }}</p>
+  </div>
+
+  <div class="box labels">
+    <h3>Label List</h3>
+    <ul>
+      {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+        <li><a href="{{ (index $taxonomy 0).Page.RelPermalink }}">{{ $name }}</a> ({{ len $taxonomy }})</li>
+      {{ end }}
+    </ul>
+  </div>
+
+  <div class="box tag-cloud">
+    <h3>Label Cloud</h3>
+    <div class="cloud">
+      {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+        <a class="tag" href="{{ (index $taxonomy 0).Page.RelPermalink }}">{{ $name }}</a>
+      {{ end }}
+    </div>
+  </div>
+</aside>
