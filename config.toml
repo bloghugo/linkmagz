@@ -1,4 +1,4 @@
-baseURL = "https://example.com/"
+baseURL = "https://bloghugo.github.io/linkmagz/"
 languageCode = "id"
 title = "Blog Hugo SEO"
 theme = "custom"
